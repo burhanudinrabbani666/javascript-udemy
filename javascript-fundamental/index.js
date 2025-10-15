@@ -83,4 +83,38 @@ x = y = 25 - 10 - 5; // x = y = 10
 console.log(x, y);
 
 const averageAge = (ageBani + ageAisa) / 2; // () akan dilakukan pertama lalu di bagi.
-console.log(ageBani, ageAisa, averageAge);*/
+console.log(ageBani, ageAisa, averageAge);
+
+const firstName = "burhanudin";
+const job = "unemployed";
+const birthYear = 2002;
+const year = 2025;
+
+const burhanudin = `I'm ${firstName}
+a ${year - birthYear}  years old 
+${job} `;
+
+console.log(burhanudin); */
+
+const age = 15;
+
+if (age >= 18) {
+  console.log(`bani can start driving lincense 🚗`);
+} else {
+  console.log(
+    `bani is ${age} years old. cannot start driving license 🚗. wait another ${
+      18 - age
+    } years.`
+  );
+}
+
+const birthYear = 2002;
+let century; // outside the box
+
+if (birthYear <= 2000) {
+  century = 20; // inside the box
+} else {
+  century = 21; // inside the box
+}
+
+console.log(`Burhanudin birth in ${century}th`); // should declare variable outside box first
