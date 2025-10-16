@@ -175,7 +175,7 @@ if (favorite === 23) {
 if (favorite !== 23) {
   // !== tidak sama dengan 23
   console.log(`why not 23?`);
-}*/
+}
 // AND &&, OR || and NOT !
 
 const hasDriverLicense = true; //A
@@ -199,4 +199,45 @@ if (hasDriverLicense && hasGoodVision && !isTired) {
   console.log(`sarah should be driver`);
 } else {
   console.log(`soemeone else should drive`);
+}*/
+
+const day = "monday";
+//
+switch (day) {
+  case "monday": // day ===monday
+    console.log(`Eat Bakso`);
+    console.log(`coding`);
+    break;
+  case `tuesday`:
+    console.log(`eat batagor`);
+    break;
+  case `wednesday`:
+  case `thursday`:
+    console.log(`eat siomay`);
+    break;
+  case `friday`:
+    console.log(`fishing`);
+    break;
+  case `satuurday`:
+  case ` sunday`:
+    console.log(`enjoy weekend`);
+    break;
+  default:
+    console.log(`not valid day`);
+    break;
+}
+
+if (day === "monday") {
+  console.log(`Eat Bakso`);
+  console.log(`coding`);
+} else if (day === "tuesday") {
+  console.log(`eat batagor`);
+} else if (day === `wednesday` || day === `thursday`) {
+  console.log(`eat siomay`);
+} else if (day === `friday`) {
+  console.log(`fishing`);
+} else if (day === `saturday` || day === `sunday`) {
+  console.log(`enjoy weekend`);
+} else {
+  log(`not valid day`);
 }
