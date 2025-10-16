@@ -7,7 +7,7 @@ const passTest = true;
 
 if (passTest) hasDriverLicense = true;
 if (hasDriversLicense) console.log(`i can drive :D`);
-*/
+
 
 // function
 
@@ -33,4 +33,19 @@ console.log(appleJuice); // capture value into variable
 console.log(fruitProccesor(5, 0)); // not capture value into variable or directly
 
 const appleOrangeJuice = fruitProccesor(3, 3);
-console.log(appleOrangeJuice);
+console.log(appleOrangeJuice);*/
+
+// Function Declaration vs Expressions
+
+// Function declaration
+function calcAge1(birthYear) {
+  return 2025 - birthYear;
+}
+const age1 = calcAge1(2002);
+
+// Function Expressions, store in variable
+const calcAge2 = function (birthYear) {
+  return 2025 - birthYear;
+};
+const age2 = calcAge2(2002);
+console.log(age1, age2);

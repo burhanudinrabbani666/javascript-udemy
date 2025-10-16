@@ -26,3 +26,22 @@ console.log(fruitProccesor(5, 0)); // not capture value into variable
 ```
 
 > not all function need parameter and return.
+
+### Function Declaration vs Expressions
+
+```js
+// Function declaration
+function calcAge1(birthYear) {
+  return 2025 - birthYear;
+}
+const age1 = calcAge1(2002);
+```
+
+```js
+// Function Expressions
+const calcAge2 = function (birthYear) {
+  return 2025 - birthYear;
+};
+const age2 = calcAge2(2002);
+console.log(age1, age2);
+```
