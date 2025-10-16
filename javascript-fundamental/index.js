@@ -153,7 +153,7 @@ if (money) {
   // false
   console.log(`you should get a job!`);
 }
-*/
+
 
 const age = "23";
 if (age === 23) console.log(`you just becoming adult 😄(strict)`); // not executed
@@ -175,4 +175,28 @@ if (favorite === 23) {
 if (favorite !== 23) {
   // !== tidak sama dengan 23
   console.log(`why not 23?`);
+}*/
+// AND &&, OR || and NOT !
+
+const hasDriverLicense = true; //A
+const hasGoodVision = true; //B
+
+console.log(hasDriverLicense && hasGoodVision); // false
+console.log(hasDriverLicense || hasGoodVision); // true
+console.log(!hasDriverLicense);
+
+const shouldDrive = hasDriverLicense && hasGoodVision;
+
+// if (shouldDrive) {
+// console.log(` sarah is able to drive`);
+// } else {
+// console.log(`someone else should drive`);
+// }
+const isTired = false;
+console.log(hasDriverLicense && hasGoodVision && isTired); // true
+
+if (hasDriverLicense && hasGoodVision && !isTired) {
+  console.log(`sarah should be driver`);
+} else {
+  console.log(`soemeone else should drive`);
 }
