@@ -94,7 +94,7 @@ const burhanudin = `I'm ${firstName}
 a ${year - birthYear}  years old 
 ${job} `;
 
-console.log(burhanudin); */
+console.log(burhanudin); 
 
 const age = 15;
 
@@ -118,3 +118,61 @@ if (birthYear <= 2000) {
 }
 
 console.log(`Burhanudin birth in ${century}th`); // should declare variable outside box first
+
+
+// type conversion
+const inputYear = `2002`;
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number(`bani`)); // NaN
+console.log(typeof NaN);
+
+console.log(String(23), 23); // becoming string
+
+// type coerction
+console.log("i'm" + 23 + "years old");
+console.log(`i'm 23 years old`);
+console.log("23" - "10" - 3); // 10 number
+
+let n = "1" + 1; // 11 dtring becaus + operator
+n = n - 1; // 11 - 1  = 10 Number
+console.log(n); // 10 Number
+
+
+console.log(Boolean(0)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean("bani")); // true
+console.log(Boolean({})); // true
+
+const money = 0; // 0 = falsy value other that true
+if (money) {
+  // true
+  console.log(`don't spend it all`);
+} else {
+  // false
+  console.log(`you should get a job!`);
+}
+*/
+
+const age = "23";
+if (age === 23) console.log(`you just becoming adult 😄(strict)`); // not executed
+if (age == 23) console.log(`you just becoming adult 😄 (loose)`); // executed
+
+const favorite = Number(prompt(`what your favorite number?`));
+console.log(favorite); // string
+console.log(typeof favorite);
+
+if (favorite === 23) {
+  // loose
+  console.log(`amazing number`);
+} else if (favorite === 7) {
+  console.log(`Suiiiiii`);
+} else {
+  console.log(`Your gay. number not 23 or 7`);
+}
+
+if (favorite !== 23) {
+  // !== tidak sama dengan 23
+  console.log(`why not 23?`);
+}
