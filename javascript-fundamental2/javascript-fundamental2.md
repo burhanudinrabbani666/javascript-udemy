@@ -45,3 +45,7 @@ const calcAge2 = function (birthYear) {
 const age2 = calcAge2(2002);
 console.log(age1, age2);
 ```
+
+### arrow function
+
+> arrow function is faster and shorter to write
