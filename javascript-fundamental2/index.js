@@ -105,3 +105,42 @@ const yearUntiRetirement = (birthYear, firstName) => {
 console.log(yearUntiRetirement(2002, "burhanudin rabbani"));
 console.log(yearUntiRetirement(1950, "soeharto"));
 */
+
+const friends = [`micheal`, `steven`, `peter`]; // literal syntax
+console.log(friends);
+
+// const years = new Array(2002, 2003, 2004, 2021);
+
+console.log(friends[0]); // array is zero based
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = `bani`; // can mutate array even
+
+console.log(friends);
+const firstName = `burhanudin`;
+const bani = [firstName, `Rabbani`, 2025 - 2002, `unemployed`, friends];
+
+console.log(bani);
+
+//exercise
+const calcAge3 = (year) => {
+  return 2025 - year;
+};
+
+const years = [2002, 2003, 2004, 2021];
+
+const age1 = calcAge3(years[0]);
+const age2 = calcAge3(years[1]);
+const age3 = calcAge3(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [
+  calcAge3(years[0]),
+  calcAge3(years[1]),
+  calcAge3(years[years.length - 1]),
+];
+
+console.log(ages);
