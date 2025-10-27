@@ -1,9 +1,9 @@
-function calcTip(value) {
-  if (value >= 50 && value <= 300) {
-    const tip = value * 0.15;
+function calcTip(bill) {
+  if (bill >= 50 && bill <= 300) {
+    const tip = bill * 0.15;
     return tip;
   } else {
-    return value * 0.2;
+    return bill * 0.2;
   }
 }
 // console.log(calcTip(400));

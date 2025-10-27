@@ -105,7 +105,7 @@ const yearUntiRetirement = (birthYear, firstName) => {
 console.log(yearUntiRetirement(2002, "burhanudin rabbani"));
 console.log(yearUntiRetirement(1950, "soeharto"));
 
-
+ // array
 const friends = [`micheal`, `steven`, `peter`]; // literal syntax
 console.log(friends);
 
@@ -167,4 +167,108 @@ console.log(friends);
 
 console.log(friends.indexOf(`steven`));
 console.log(friends.indexOf(`wahyu`));
+
+
+const baniData = [
+  `burhanudin`,
+  `rabbani`,
+  2025 - 2002,
+  `unemployed`,
+  [`angga`, `risal`, `aziz`],
+];
+
+const bani = {
+  firstName: `burhanudin`,
+  lastName: `Rabbani`,
+  age: 2025 - 2002,
+  job: `unemployed`,
+  friend: [`angga`, `risal`, `aziz`],
+};
+
+
+// dot vs brcket notation
+const bani = {
+  firstName: `Burhanudin`,
+  lastName: `Rabbani`,
+  age: 2025 - 2002,
+  job: `unemployed`,
+  friend: [`angga`, `risal`, `aziz`],
+};
+
+console.log(bani);
+
+console.log(bani.lastName); // dot operator (real properti name)
+console.log(bani[`lastName`]); // bracket notation
+
+const nameKey = `Name`;
+
+console.log(bani[`first` + nameKey]);
+console.log(bani[`last` + nameKey]);
+
+// const interested = prompt(
+//   `what do you interested about King bani? chose between firstName, lastName, age, job, and friends`
+// );
+
+// if (bani[interested]) {
+//   alert(bani[interested]);
+// } else {
+//   alert(
+//     `Wrong Request. chose between firstName, lastName, age, job, and friends`
+//   );
+// }
+
+bani.loaction = `China`; // add new properti
+bani[`instagram`] = `bbaanii_`;
+
+console.log(bani);
+
+//challenge
+// `bani has 3 friend, and his best friend is called angga
+
+console.log(
+  `${bani.firstName} has ${bani.friend.length} friends, they are ${bani.friend} and his best friend is called ${bani.friend[0]}.`
+);
 */
+
+// object methohd
+
+const bani = {
+  firstName: `Burhanudin`,
+  lastName: `Rabbani`,
+  birthyear: 2002,
+  job: `unemployed`,
+  friend: [`angga`, `risal`, `aziz`],
+  driverLicense: true,
+
+  // calcAge : function (birthYear){
+  //   return 2025 - birthYear
+  // }
+
+  // calcAge: function () {
+  //   // console.log(this); // a whole bani object
+  //   return 2025 - this.birthyear;
+  // }, // method
+
+  calcAge: function () {
+    this.age = 2025 - this.birthyear;
+    return this.age;
+  }, // method
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-years old ${
+      this.job
+    }. and he ${
+      this.driverLicense ? `has Driver license` : `Dont Have driver license`
+    } `; // bolean
+  },
+};
+
+console.log(bani.calcAge()); //bani calling the method // 23
+console.log(bani.age);
+console.log(bani.age);
+console.log(bani.age);
+
+//challenge
+// "bani is a 23-years old unemployed, and he has a/no driver,s license"
+
+console.log(bani.getSummary()); //Burhanudin is a 23-years old unemployed. and he has Driver license
