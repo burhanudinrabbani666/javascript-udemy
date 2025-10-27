@@ -104,7 +104,7 @@ const yearUntiRetirement = (birthYear, firstName) => {
 };
 console.log(yearUntiRetirement(2002, "burhanudin rabbani"));
 console.log(yearUntiRetirement(1950, "soeharto"));
-*/
+
 
 const friends = [`micheal`, `steven`, `peter`]; // literal syntax
 console.log(friends);
@@ -144,3 +144,27 @@ const ages = [
 ];
 
 console.log(ages);
+
+
+const friends = [`micheal`, `steven`, `peter`]; // literal syntax
+
+const newLength = friends.push(`udin`); // add to the end of array
+console.log(friends);
+console.log(newLength);
+
+friends.unshift(`wahyu`);
+console.log(friends); // add to the beginning of array
+
+// remove element
+
+friends.pop();
+const popped = friends.pop(); // remove last elemenet
+console.log(popped);
+console.log(friends);
+
+friends.shift(); // remove first element
+console.log(friends);
+
+console.log(friends.indexOf(`steven`));
+console.log(friends.indexOf(`wahyu`));
+*/
