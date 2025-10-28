@@ -228,7 +228,7 @@ console.log(bani);
 console.log(
   `${bani.firstName} has ${bani.friend.length} friends, they are ${bani.friend} and his best friend is called ${bani.friend[0]}.`
 );
-*/
+
 
 // object methohd
 
@@ -272,3 +272,26 @@ console.log(bani.age);
 // "bani is a 23-years old unemployed, and he has a/no driver,s license"
 
 console.log(bani.getSummary()); //Burhanudin is a 23-years old unemployed. and he has Driver license
+*/
+
+// loops
+
+// for (let rep = 0; rep <= 10; rep++) {
+// (variable decalration ; rep.length; increment/decrement)
+// if (rep === 0) {
+// console.log(`💚`);
+// }
+// console.log(`Lifting weight repetition ${rep} 🏋️`);
+// }
+
+const baniData = [
+  `burhanudin`,
+  `rabbani`,
+  2025 - 2002,
+  `unemployed`,
+  [`angga`, `risal`, `aziz`],
+];
+
+for (let index = 0; index < baniData.length; index++) {
+  console.log(baniData[index]);
+}

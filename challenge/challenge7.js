@@ -39,11 +39,7 @@ const john = {
 console.log(
   `${
     mark.calcBMI() > john.calcBMI()
-      ? `${mark.fullName} (${mark.calcBMI()}) is higher than ${
-          john.fullName
-        } (${john.calcBMI()})`
-      : `${john.fullName} (${john.calcBMI()}) is higher than ${
-          mark.fullName
-        } (${mark.calcBMI()})`
+      ? `${mark.fullName} (${mark.bmi}) BMI is higher than ${john.fullName} (${john.bmi}) BMI.`
+      : `${john.fullName} (${john.bmi}) BMI is higher than ${mark.fullName} (${mark.bmi}) BMI.`
   }`
 );
