@@ -98,7 +98,7 @@ for (let index = 1; index <= 3; index++) {
     console.log(`lifting weigth repetition ${rep} 🏋️`);
   }
 }
-*/
+
 
 // While loop
 // const rep = 10;
@@ -119,4 +119,35 @@ while (dice !== 6) {
   dice = Math.trunc(Math.random() * 6) + 1;
 
   if (dice == 6) console.log(`Loop is about to end...`);
+}
+*/
+
+const bani = [
+  `Burhanudin`,
+  `Rabbani`,
+  2025 - 2002,
+  `unemployed`,
+  [`Angga`, `Risal`, `Aziz`],
+  true,
+];
+const types = [];
+
+for (let index = 0; index < bani.length; index++) {
+  //reading from bani array
+  console.log(bani[index], typeof bani[index]);
+
+  // filling type of array
+  types[index] = typeof bani[index];
+
+  //filling types array
+  // types[index]= typefo bani[index]
+  types.push(typeof bani[index]);
+}
+console.log(types);
+
+const years = [2001, 2002, 2003, 2004];
+const age = [];
+
+for (let index = 0; index < years.length; index++) {
+  age.push(2025 - years[index]);
 }
