@@ -19,9 +19,6 @@ const measurKelvin = function () {
   return kelvin;
 };
 
-// A) Indetify debug
-console.log(measurKelvin());
-
 function calcAvargeGithubCommit(params) {
   let submitCount = 0;
 
@@ -32,7 +29,12 @@ function calcAvargeGithubCommit(params) {
   console.log(`${submitCount / params.length} avarege commit a Day`);
 }
 
-const baniGithub = [4, 3, 3, 10, 3, 4, 8, 3];
-console.log(baniGithub);
+let labels = [`budur`, `babakan`];
 
-calcAvargeGithubCommit(baniGithub);
+function addLabels(newVillageName) {
+  const newVillageData = newVillageName;
+
+  const updateVillage = [...labels, newVillageData];
+  labels = updateVillage;
+  return updateVillage;
+}
