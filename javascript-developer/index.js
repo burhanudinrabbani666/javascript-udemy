@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 const measurKelvin = function () {
   const measurment = {
     type: `temp`,
@@ -39,7 +39,7 @@ function addLabels(newVillageName) {
   return updateVillage;
 }
 
-const userData = [
+let userData = [
   {
     fullName: 'Burhanudin Rabbani',
     labels: [labels[0]],
@@ -50,14 +50,16 @@ const userData = [
   },
 ];
 
-console.log(userData);
-
 function userAddLabels(data, newValue) {
-  data.labels = [...data.labels, newValue];
-
-  return data;
+  return {
+    ...data,
+    labels: [...data.labels, newValue],
+  };
 }
 
-console.log(userAddLabels(userData[0], labels[1]));
+const updateUser = userAddLabels(userData[0], labels[1]);
+const newUserData = [updateUser, ...userData.slice(1)];
+userData = newUserData;
 
 console.log(userData);
+*/
