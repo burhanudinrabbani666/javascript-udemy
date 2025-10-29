@@ -77,5 +77,3 @@ document.querySelector(`.again`).addEventListener(`click`, function () {
 
   document.querySelector(`.guess`).value = ` `;
 });
-
-//TODO generate secret number
