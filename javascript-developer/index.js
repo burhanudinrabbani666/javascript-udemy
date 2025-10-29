@@ -38,3 +38,26 @@ function addLabels(newVillageName) {
   labels = updateVillage;
   return updateVillage;
 }
+
+const userData = [
+  {
+    fullName: 'Burhanudin Rabbani',
+    labels: [labels[0]],
+  },
+  {
+    fullName: `angga`,
+    labels: [labels[1]],
+  },
+];
+
+console.log(userData);
+
+function userAddLabels(data, newValue) {
+  data.labels = [...data.labels, newValue];
+
+  return data;
+}
+
+console.log(userAddLabels(userData[0], labels[1]));
+
+console.log(userData);
