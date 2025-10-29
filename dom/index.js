@@ -18,13 +18,23 @@ document.querySelector(`.check`).addEventListener('click', function () {
   const guess = Number(document.querySelector(`.guess`).value);
   console.log(typeof guess, guess);
 
+  // no input
   if (!guess) {
     document.querySelector(`.message`).textContent = `No Number ❗`;
-  } else if (guess === secretNumber) {
+  }
+  // if Win
+  else if (guess === secretNumber) {
     document.querySelector(`.message`).textContent = `Your Correct 🥳`;
     score++;
     document.querySelector(`.score`).textContent = score--;
-  } else if (guess > secretNumber) {
+
+    document.querySelector(`body`).style.backgroundColor = `#60b347`;
+
+    document.querySelector(`.number`).style.width = `30rem`;
+  }
+
+  // to high
+  else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector(`.message `).textContent = `Too High 📈`;
       score--;
@@ -33,7 +43,10 @@ document.querySelector(`.check`).addEventListener('click', function () {
       document.querySelector(`.message `).textContent = `Loser !!! `;
       document.querySelector(`.score`).textContent = 0;
     }
-  } else if (guess < secretNumber) {
+  }
+
+  // to low
+  else if (guess < secretNumber) {
     if (score > 1) {
       document.querySelector(`.message `).textContent = `Too low 📈`;
       score--;
