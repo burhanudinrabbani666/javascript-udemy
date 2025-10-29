@@ -1,20 +1,38 @@
 'use strict';
 
-const x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15];
-function c(input) {
-  const sumsP = [0];
-  let sumsN = 0;
+const measurKelvin = function () {
+  const measurment = {
+    type: `temp`,
+    unit: `celsius`,
 
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] > 0) {
-      sumsP.push(input[i]);
-    }
-    if (input[i] < 0) {
-      sumsN += input[i];
-    }
+    // C) FIx
+    value: 10,
+  };
+
+  // B) Find
+  console.table(measurment);
+  console.log(measurment.value);
+  // console.warn(measurment.value);
+  // console.error(measurment.value);
+
+  const kelvin = measurment.value + 273;
+  return kelvin;
+};
+
+// A) Indetify debug
+console.log(measurKelvin());
+
+function calcAvargeGithubCommit(params) {
+  let submitCount = 0;
+
+  for (let index = 0; index < params.length; index++) {
+    submitCount += params[index];
   }
-  const sumPO = sumsP.length - 1;
-  return [sumPO, sumsN];
+
+  console.log(`${submitCount / params.length} avarege commit a Day`);
 }
 
-console.log(c(x));
+const baniGithub = [4, 3, 3, 10, 3, 4, 8, 3];
+console.log(baniGithub);
+
+calcAvargeGithubCommit(baniGithub);
