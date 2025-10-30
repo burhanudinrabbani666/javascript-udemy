@@ -21,20 +21,39 @@ function switchPlayer() {
   player1Element.classList.toggle(`player--active`);
 }
 
-//staring conditions
-score0Element.textContent = 0;
-score1Elment.textContent = 0;
-diceElement.classList.add(`hidden`);
+let scores, currentScore, activePlayer, playing;
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+function initialConditions() {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+
+  // reset text content
+  score0Element.textContent = 0;
+  score1Elment.textContent = 0;
+  current0Element.textContent = 0;
+  current1Element.textContent = 0;
+
+  //remove winner and active player class
+  player0Element.classList.remove(`player--winner`);
+  player1Element.classList.remove(`player--winner`);
+
+  // set active player to player 0
+  player0Element.classList.add(`player--active`);
+  player1Element.classList.remove(`player--active`);
+
+  //hide dice
+  diceElement.classList.add(`hidden`);
+}
+
+initialConditions();
+
 //addEvent listener
 
 //roll
 btnRollDice.addEventListener(`click`, function () {
-  if (playing) {
+  if (playing === true) {
     // 1.generating a random dice roll
     const dice = Math.trunc(Math.random() * 6) + 1;
 
@@ -65,7 +84,7 @@ btnHold.addEventListener(`click`, function () {
       scores[activePlayer];
 
     // 2. check if player's score is >=100
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       // finish the game
       playing = false;
       diceElement.classList.add(`hidden`);
@@ -82,3 +101,5 @@ btnHold.addEventListener(`click`, function () {
   }
   // swictch to next player
 });
+
+btnNewGame.addEventListener(`click`, initialConditions);
