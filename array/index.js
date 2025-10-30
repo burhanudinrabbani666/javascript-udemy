@@ -12,35 +12,35 @@ const bettaShop = {
   },
 };
 
-const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+// const arr = [2, 3, 4];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
 
-const [x, y, z] = arr;
-console.log(x, y, z);
-console.log(arr);
+// const [x, y, z] = arr;
+// console.log(x, y, z);
+// console.log(arr);
 
-let [main, , secondary] = bettaShop.categories;
-console.log(main, secondary);
-
-// const temp = main;
-// main = secondary;
-// secondary = temp;
+// let [main, , secondary] = bettaShop.categories;
 // console.log(main, secondary);
 
-[main, secondary] = [secondary, main];
-console.log(main, secondary);
+// // const temp = main;
+// // main = secondary;
+// // secondary = temp;
+// // console.log(main, secondary);
 
-// Receive 2 return value from a function
-const [satrter, mainBetta] = bettaShop.order(2, 0);
-console.log(satrter, mainBetta);
+// [main, secondary] = [secondary, main];
+// console.log(main, secondary);
 
-// nested destructuring
-const nested = [2, 4, [5, 6]];
-const [i, , [j, k]] = nested;
-console.log(i, j, k);
+// // Receive 2 return value from a function
+// const [satrter, mainBetta] = bettaShop.order(2, 0);
+// console.log(satrter, mainBetta);
 
-// default values
-const [p = 1, q = 1, r = 1] = [8];
-console.log(p, q, r);
+// // nested destructuring
+// const nested = [2, 4, [5, 6]];
+// const [i, , [j, k]] = nested;
+// console.log(i, j, k);
+
+// // default values
+// const [p = 1, q = 1, r = 1] = [8];
+// console.log(p, q, r);
