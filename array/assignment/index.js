@@ -224,7 +224,7 @@ const books = [
 ];
 
 const a = books[0].author;
-const [firstBook, secondBook] = [books[0].title, books[1].title];
+const [firstBook, secondBook] = books;
 const [, , thirdBook] = [books[0].title, books[1].title, books[2].title];
 const [rating, ratingsCount] = [
   books[7].thirdParty.goodreads.rating,
