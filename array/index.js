@@ -34,8 +34,15 @@ const bettaShop = {
       `order received! ${this.originalBetta[starterIndex]} and ${this.categories[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPlakat: function (clr1, clr2, clr3) {
+    console.log(
+      `here is your beautiful Plakat Betta fish with colors ${clr1}, ${clr2}, and ${clr3}`
+    );
+  },
 };
 
+/*
 //
 // destructuring object
 bettaShop.orderDelivery({
@@ -49,6 +56,7 @@ bettaShop.orderDelivery({
   address: `Jl ki brajanata no 45`,
   satrterIndex: 0,
 });
+
 
 const { name, openingHours, mainBetta } = bettaShop;
 console.log(name, openingHours, mainBetta);
@@ -69,35 +77,76 @@ console.log(a, b);
 
 // nested object
 
-// const arr = [2, 3, 4];
-// const a = arr[0];
-// const b = arr[1];
-// const c = arr[2];
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
 
-// const [x, y, z] = arr;
-// console.log(x, y, z);
-// console.log(arr);
+const [x, y, z] = arr;
+console.log(x, y, z);
+console.log(arr);
 
-// let [main, , secondary] = bettaShop.categories;
+let [main, , secondary] = bettaShop.categories;
+console.log(main, secondary);
+
+// const temp = main;
+// main = secondary;
+// secondary = temp;
 // console.log(main, secondary);
 
-// // const temp = main;
-// // main = secondary;
-// // secondary = temp;
-// // console.log(main, secondary);
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
 
-// [main, secondary] = [secondary, main];
-// console.log(main, secondary);
+// Receive 2 return value from a function
+const [satrter, mainBetta] = bettaShop.order(2, 0);
+console.log(satrter, mainBetta);
 
-// // Receive 2 return value from a function
-// const [satrter, mainBetta] = bettaShop.order(2, 0);
-// console.log(satrter, mainBetta);
+// nested destructuring
+const nested = [2, 4, [5, 6]];
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
 
-// // nested destructuring
-// const nested = [2, 4, [5, 6]];
-// const [i, , [j, k]] = nested;
-// console.log(i, j, k);
+// default values
+const [p = 1, q = 1, r = 1] = [8];
+console.log(p, q, r);
+*/
 
-// // default values
-// const [p = 1, q = 1, r = 1] = [8];
-// console.log(p, q, r);
+// spread operator
+
+const arr = [7, 8, 9];
+const newArr = [1, 2, 3, ...arr];
+console.log(newArr);
+
+const newOriginalBetta = [...bettaShop.originalBetta, `wild Betta`];
+console.log(newOriginalBetta);
+
+// copy array
+const originalBettaCopy = [...bettaShop.originalBetta];
+
+//join 2 array
+const allBetaMenu = [...bettaShop.originalBetta, ...bettaShop.mainBetta];
+console.log(allBetaMenu);
+
+const name = `Wava`;
+const nameLetters = [...name, ` `, `S.`];
+console.log(nameLetters);
+
+// oreder Betta
+// const color = [
+//   prompt(`lets order your favorite Plakat Betta color 1?`),
+//   prompt(`color 2?`),
+//   prompt(`color 3?`),
+// ];
+// console.log(color);
+
+// bettaShop.orderPlakat(...color);
+
+// object
+
+const newBettaShop = { ...bettaShop, ig: `@bettawava` };
+console.log(newBettaShop);
+
+const bettaShopCopy = { ...bettaShop };
+bettaShopCopy.name = `Betta Wava galaxy`;
+console.log(bettaShopCopy.name);
+console.log(bettaShop.name);

@@ -250,7 +250,7 @@ const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = [
   ,
 ];
 console.log(fiveStarRatings, oneStarRatings, threeStarRatings); // ✅
-*/
+
 
 // 2.1
 const { title, author, ISBN } = books[0];
@@ -285,10 +285,24 @@ console.log(bookRating);
 console.log(`------------------`);
 
 // 2.6
-
 function printBookInfo({ title, author, year }) {
   console.log(`${title} by ${author}, ${year}`);
 }
 
 printBookInfo({ title: 'Deep Work', author: 'Cal Newport', year: 2016 }); // ✅
+console.log(`------------------`);
+*/
+
+// spread operator
+// 3.1
+const bookauthors = [...books[0].author, ...books[1].author];
+console.log(bookauthors); // ✅
+console.log(`------------------`);
+
+// 3.2
+function spellWord(word) {
+  console.log(...word);
+}
+
+spellWord(`Hello World`); // ✅
 console.log(`------------------`);
