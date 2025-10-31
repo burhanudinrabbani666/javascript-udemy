@@ -223,20 +223,72 @@ const books = [
   },
 ];
 
+/*
 const a = books[0].author;
+// 1.1
 const [firstBook, secondBook] = books;
-const [, , thirdBook] = [books[0].title, books[1].title, books[2].title];
+console.log(firstBook, secondBook); // ✅
+console.log(`------------------`);
+
+// 1.2
+const [, , thirdBook] = [books[0], books[1], books[2]];
+console.log(thirdBook); // ✅
+console.log(`------------------`);
+
+// 1.3
 const [rating, ratingsCount] = [
   books[7].thirdParty.goodreads.rating,
   books[7].thirdParty.goodreads.ratingsCount,
 ];
-const [oneStarRatings, threeStarRatings = 0, fiveStarRatings] = [
+console.log(rating, ratingsCount); // ✅
+console.log(`------------------`);
+
+// 1.4
+const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = [
+  books[7].thirdParty.goodreads.fiveStarRatingCount,
   books[7].thirdParty.goodreads.oneStarRatingCount,
   ,
-  books[7].thirdParty.goodreads.fiveStarRatingCount,
 ];
+console.log(fiveStarRatings, oneStarRatings, threeStarRatings); // ✅
+*/
 
-console.log(firstBook, secondBook);
-console.log(thirdBook);
-console.log(rating, ratingsCount);
-console.log(oneStarRatings, threeStarRatings, fiveStarRatings);
+// 2.1
+const { title, author, ISBN } = books[0];
+console.log(title, author, ISBN);
+console.log(`------------------`);
+
+// 2.2
+const { keywords: tags } = books[0];
+console.log(tags); // ✅
+console.log(`------------------`);
+
+// 2.3
+const { programmingLanguage = `unknown`, language } = books[6];
+console.log(programmingLanguage, language); // ✅
+console.log(`------------------`);
+
+//2.4
+let bookTitle = title; //data from destructuring line 256
+let bookauthor = author;
+console.log(bookTitle, bookauthor); // ✅
+console.log(`------------------`);
+
+// 2.5
+// Please do most of the work on the left side of the assignment operator: const ... = books[0];
+
+const {
+  thirdParty: {
+    goodreads: { rating: bookRating },
+  },
+} = books[0]; // use : to change the variable name
+console.log(bookRating);
+console.log(`------------------`);
+
+// 2.6
+
+function printBookInfo({ title, author, year }) {
+  console.log(`${title} by ${author}, ${year}`);
+}
+
+printBookInfo({ title: 'Deep Work', author: 'Cal Newport', year: 2016 }); // ✅
+console.log(`------------------`);
