@@ -344,3 +344,8 @@ for (let index = 0; index < books.length; index++) {
     console.log(`${books[index].title} provides online content`);
 }
 */
+
+for (let index = 0; index < books.length; index++) {
+  books[index].onlineContent ??
+    console.log(`${books[index].title} provides no data its online content`);
+}

@@ -187,7 +187,7 @@ add(6, 5, 4, 3, 2, 1);
 
 const x = [23, 5, 7];
 add(...x);
-*/
+
 
 console.log(`--------- OR --------`);
 //
@@ -201,8 +201,6 @@ bettaShop.numGuests = 22; // can number 0 because 0 = false
 const guest1 = bettaShop.numGuests ? bettaShop.numGuests : 10;
 console.log(guest1);
 
-const guest2 = bettaShop.numGuests || 10;
-console.log(guest2);
 
 console.log(`--------- AND --------`);
 
@@ -216,3 +214,13 @@ if (bettaShop.orderPlakat) {
 }
 
 bettaShop.orderPlakat && bettaShop.orderPlakat(`Bluerim`, `Galaxy`, `Fancy`);
+
+
+bettaShop.numGuests = null;
+
+const guest2 = bettaShop.numGuests || 10;
+console.log(guest2);
+
+const guestCorrect = bettaShop.numGuests ?? 10;
+console.log(guestCorrect); // 10 because bettaShop.numGuests is null
+*/
