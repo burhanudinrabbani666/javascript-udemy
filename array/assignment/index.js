@@ -291,7 +291,6 @@ function printBookInfo({ title, author, year }) {
 
 printBookInfo({ title: 'Deep Work', author: 'Cal Newport', year: 2016 }); // ✅
 console.log(`------------------`);
-*/
 
 // spread operator
 // 3.1
@@ -306,3 +305,42 @@ function spellWord(word) {
 
 spellWord(`Hello World`); // ✅
 console.log(`------------------`);
+
+// 4.1
+const [mainKeyword, ...rest] = books[0].keywords;
+console.log(mainKeyword, rest);
+
+//4.2
+const { publisher: bookPublisher, ...restOfTheBook } = books[1];
+console.log(bookPublisher);
+console.log(restOfTheBook);
+
+//4.3
+
+function printBookAuthor(title, ...author) {
+  console.log(`The Book ${title} has ${author.length} authors`);
+}
+printBookAuthor(books[0].title, `robert sedewig`, `muldoko`);
+
+
+// 5.1
+
+function hasExampleInJava(book) {
+  console.log(book.programmingLanguage === `Java` || `no data avaible`);
+}
+hasExampleInJava(books[0]);
+
+//5.2
+
+for (let index = 0; index < books.length; index++) {
+  const online = books[index].onlineContent
+    ? `${books[index].title} provides online content`
+    : `not`;
+  console.log(online);
+}
+
+for (let index = 0; index < books.length; index++) {
+  books[index].onlineContent &&
+    console.log(`${books[index].title} provides online content`);
+}
+*/

@@ -42,7 +42,7 @@ const bettaShop = {
   },
 };
 
-/*
+/**ude
 //
 // destructuring object
 bettaShop.orderDelivery({
@@ -109,7 +109,7 @@ console.log(i, j, k);
 // default values
 const [p = 1, q = 1, r = 1] = [8];
 console.log(p, q, r);
-*/
+
 
 // spread operator
 
@@ -150,3 +150,69 @@ const bettaShopCopy = { ...bettaShop };
 bettaShopCopy.name = `Betta Wava galaxy`;
 console.log(bettaShopCopy.name);
 console.log(bettaShop.name);
+
+
+// 1. destructuring
+// spread, because on right side of =
+const arr = [1, 2, ...[3, 4]];
+
+// rest, because on left side of =
+const [a, b, ...other] = [1, 2, 3, 4];
+console.log(a, b, other);
+
+const [Plakat, , , veiltail, ...otherBetta] = [
+  ...bettaShop.originalBetta,
+  ...bettaShop.mainBetta,
+];
+
+console.log(Plakat, veiltail, otherBetta);
+
+//object
+
+const { sat, ...weekdays } = bettaShop.openingHours;
+console.log(weekdays);
+
+// 2. function
+function add(...numbers) {
+  let sum = 0;
+  for (let index = 0; index < numbers.length; index++) {
+    sum += numbers[index];
+  }
+  console.log(sum);
+}
+
+add(2, 3);
+add(4, 5, 6, 7);
+add(6, 5, 4, 3, 2, 1);
+
+const x = [23, 5, 7];
+add(...x);
+*/
+
+console.log(`--------- OR --------`);
+//
+console.log(3 || `bani`); // 3
+console.log(`` || `jonas`); // jonas
+console.log(true || 0); // true
+console.log(undefined || null); // null
+
+bettaShop.numGuests = 22; // can number 0 because 0 = false
+
+const guest1 = bettaShop.numGuests ? bettaShop.numGuests : 10;
+console.log(guest1);
+
+const guest2 = bettaShop.numGuests || 10;
+console.log(guest2);
+
+console.log(`--------- AND --------`);
+
+console.log(0 && `bani`); // 0
+console.log(7 && `jonas`); // jonas
+console.log(`hello` && 23 && null && `bani`); // null
+
+// practical example
+if (bettaShop.orderPlakat) {
+  bettaShop.orderPlakat(`blue`, `red`, `galaxy`);
+}
+
+bettaShop.orderPlakat && bettaShop.orderPlakat(`Bluerim`, `Galaxy`, `Fancy`);
