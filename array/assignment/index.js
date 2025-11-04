@@ -343,9 +343,27 @@ for (let index = 0; index < books.length; index++) {
   books[index].onlineContent &&
     console.log(`${books[index].title} provides online content`);
 }
-*/
 
+
+// 6.1
 for (let index = 0; index < books.length; index++) {
   books[index].onlineContent ??
     console.log(`${books[index].title} provides no data its online content`);
 }
+
+
+// 7.1
+for (let index = 0; index < books.length; index++) {
+  books[index].edition ||= 1;
+  console.log(`${books[index].title} is ${books[index].edition} edition`);
+}
+
+//7.2
+for (let index = 0; index < books.length; index++) {
+  (books[index].highlighted && books[index].thirdParty.goodreads.rating != 4.2) &&= books[index].highlighted = false
+}  // ❎
+
+for (let index = 0; index < books.length; index++) {
+  books[index].highlighted &&= !(books[index].thirdParty.goodreads.rating , 4.2)
+}
+  */

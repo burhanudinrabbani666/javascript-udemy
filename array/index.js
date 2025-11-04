@@ -224,3 +224,34 @@ console.log(guest2);
 const guestCorrect = bettaShop.numGuests ?? 10;
 console.log(guestCorrect); // 10 because bettaShop.numGuests is null
 */
+
+// modern assignment operator
+
+const rest1 = {
+  name: `capri`,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: `budur`,
+  owner: `bani`,
+};
+
+// OR Assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+//nullish assignment operator
+rest1.numGuests ??= 10; // assign a value if value is null / undefined / nulish
+rest2.numGuests ??= 10;
+
+// &&
+// rest1.owner = rest1.owner && `<ANNONYMUS>`; //owner : undefined
+// rest2.owner = rest2.owner && `<ANNONYMUS>`;
+rest1.owner &&= `<ANNONYMUS>`;
+rest2.owner &&= `<ANNONYMUS>`;
+
+console.log(rest1);
+console.log(rest2); // add numbGuest as object
