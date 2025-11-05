@@ -223,7 +223,7 @@ console.log(guest2);
 
 const guestCorrect = bettaShop.numGuests ?? 10;
 console.log(guestCorrect); // 10 because bettaShop.numGuests is null
-*/
+
 
 // modern assignment operator
 
@@ -255,3 +255,11 @@ rest2.owner &&= `<ANNONYMUS>`;
 
 console.log(rest1);
 console.log(rest2); // add numbGuest as object
+*/
+
+const menu = [...bettaShop.mainBetta, ...bettaShop.originalBetta];
+console.log(...menu.entries());
+// for (const item of menu) console.log(item);
+
+// index
+// for (const [i, el] of menu.entries()) console.log(`${i + 1}: ${el}`);
