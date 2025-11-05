@@ -1,25 +1,31 @@
 `use strict`;
 
+const openingHours = {
+  thu: {
+    open: 10,
+    close: 20,
+  },
+  fri: {
+    open: 11,
+    close: 21,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const bettaShop = {
   name: 'Betta Wava',
   location: 'Jl ki brajanata no 11',
   categories: ['Aquarium', 'Fish Food', 'Accessories', 'Fish Medicine'],
   originalBetta: ['Plakat', 'Halfmoon', 'Crowntail', 'Veiltail'],
   mainBetta: ['Giant Betta', 'Fancy Betta', 'Koi Betta'],
-  openingHours: {
-    thu: {
-      open: 10,
-      close: 20,
-    },
-    fri: {
-      open: 11,
-      close: 21,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+
+  // es6 enhanced object literals
+  openingHours,
+  //
+
   order: function (satrterIndex, mainIndex) {
     return [this.originalBetta[satrterIndex], this.mainBetta[mainIndex]];
   },
@@ -42,6 +48,7 @@ const bettaShop = {
   },
 };
 
+console.log(bettaShop);
 /**ude
 //
 // destructuring object
@@ -255,11 +262,13 @@ rest2.owner &&= `<ANNONYMUS>`;
 
 console.log(rest1);
 console.log(rest2); // add numbGuest as object
-*/
 
+
+// for of
 const menu = [...bettaShop.mainBetta, ...bettaShop.originalBetta];
 console.log(...menu.entries());
 // for (const item of menu) console.log(item);
 
 // index
 // for (const [i, el] of menu.entries()) console.log(`${i + 1}: ${el}`);
+*/
