@@ -474,7 +474,7 @@ const uniqueKeywordArr = [...uniqueKeyword];
 //12.6
 uniqueKeyword.clear();
 console.log(uniqueKeyword);
-*/
+
 
 //13.1
 const bookMap = new Map([
@@ -496,3 +496,13 @@ console.log(bookMap.size);
 bookMap.has(`author`)
   ? console.log(`The author of the book is known`)
   : `nothing`;
+*/
+
+// 14.1
+const firstBookMap = new Map(Object.entries(books[0]));
+// console.log(firstBookMap);
+
+// 14.2
+for (const [key, value] of firstBookMap) {
+  if (typeof value === `number`) console.log(key);
+}

@@ -333,7 +333,7 @@ console.log(orderSet);
 for (const order of orderSet) {
   console.log(order);
 }
-*/
+
 
 // Map
 
@@ -364,6 +364,40 @@ rest.set(arr, `test`);
 console.log(rest);
 
 console.log(rest.get(arr));
+*/
+
+// maps itterarion
+const question = new Map([
+  [`question`, `What is the best Programing language ?`],
+  [1, `C`],
+  [2, `Java`],
+  [3, `JavaScript`],
+  [`correct`, 3],
+  [true, `Your Correct`],
+  [false, `Try agian !`],
+]);
+
+// console.log(question);
+//converting  object to map
+// console.log(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
+console.log(question.get(`question`));
+for (const [key, value] of question) {
+  if (typeof key === `number`) console.log(`answer ${key}: ${value}`);
+}
+// const answer = Number(prompt(`your aswer`));
+
+// const final =
+// answer === question.get(`correct`)
+// ? console.log(`${question.get(true)}`)
+// : console.log(`${question.get(false)}`);
+//
+// console.log(question.get(answer === question.get(`correct`))); // lebih baik
+
+//Convert Map to array
+console.log(...question);
+
 /*
 // Data needed for a later exercise
 const flights =
