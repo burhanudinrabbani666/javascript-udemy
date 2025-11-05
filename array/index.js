@@ -312,3 +312,25 @@ for (const [key, { open, close }] of entries) {
 }
 
 */
+
+// SETS
+
+const orderSet = new Set([
+  `plakat`,
+  `giant`,
+  `giant`,
+  `alien`,
+  `plakat`,
+  `alien`,
+]);
+
+console.log(orderSet);
+console.log(orderSet.has(`alien`));
+console.log(orderSet.has(`black`));
+orderSet.add(`red`);
+orderSet.delete(`giant`);
+console.log(orderSet);
+
+for (const order of orderSet) {
+  console.log(order);
+}

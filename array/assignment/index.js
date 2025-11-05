@@ -423,7 +423,7 @@ function getFirstKeyword(book) {
   const keyword = book.keywords?.[0] || `data not found`;
 } // ✅
 
-*/
+
 
 // 11.1
 
@@ -448,3 +448,30 @@ const entries2 = Object.entries(thirdParty);
 console.log(entries);
 console.log(`____________--------`);
 console.log(entries2);
+
+
+// 12.1
+
+const allKeywords = [];
+
+for (const book of books) {
+  allKeywords.push(...book.keywords);
+}
+
+//12.2
+const uniqueKeyword = new Set(allKeywords);
+
+//12.3
+uniqueKeyword.add(`coding`);
+uniqueKeyword.add(`science`);
+
+//12.4
+uniqueKeyword.delete(`business`);
+
+//12.5
+const uniqueKeywordArr = [...uniqueKeyword];
+
+//12.6
+uniqueKeyword.clear();
+console.log(uniqueKeyword);
+*/
