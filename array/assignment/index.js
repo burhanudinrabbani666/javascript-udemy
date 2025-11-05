@@ -424,3 +424,27 @@ function getFirstKeyword(book) {
 } // ✅
 
 */
+
+// 11.1
+
+const entries = [];
+const thirdParty = books[0].thirdParty.goodreads;
+console.log(thirdParty);
+
+for (const key of Object.keys(thirdParty)) {
+  entries.push([key]);
+} //✅
+
+//11.2
+for (const [index, value] of Object.values(thirdParty)) {
+  entries[index].push(value);
+}
+
+//11.3
+const entries2 = Object.entries(thirdParty);
+// console.log(entries2); // ✅
+
+//11.4
+console.log(entries);
+console.log(`____________--------`);
+console.log(entries2);

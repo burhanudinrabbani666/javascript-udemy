@@ -270,7 +270,7 @@ console.log(...menu.entries());
 
 // index
 // for (const [i, el] of menu.entries()) console.log(`${i + 1}: ${el}`);
-*/
+
 
 // old way
 if (bettaShop.openingHours && bettaShop.openingHours.mon)
@@ -285,4 +285,28 @@ for (const day of days) {
   const open = bettaShop.openingHours[day]?.open ?? `closed`;
 
   console.log(`On ${day} we open at ${open}`);
+}
+*/
+
+// PROPERTI names
+const proerties = Object.keys(openingHours);
+console.log(proerties);
+
+let openStr = `We are open on ${proerties.length} days:`;
+
+for (const day of proerties) {
+  openStr += `${day}, `;
+}
+// console.log(openStr);
+
+//PROPERTI Value
+const values = Object.values(openingHours);
+console.log(values); // return value of object
+
+// PROPERTI entries
+const entries = Object.entries(openingHours);
+console.log(entries); // return key and value
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we are on at ${open} and close at ${close} `);
 }
