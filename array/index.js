@@ -286,7 +286,7 @@ for (const day of days) {
 
   console.log(`On ${day} we open at ${open}`);
 }
-*/
+
 
 // PROPERTI names
 const proerties = Object.keys(openingHours);
@@ -310,3 +310,5 @@ console.log(entries); // return key and value
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we are on at ${open} and close at ${close} `);
 }
+
+*/
