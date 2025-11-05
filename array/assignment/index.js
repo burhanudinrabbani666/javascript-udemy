@@ -417,4 +417,10 @@ const newBook2 = {
   author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
   pages,
 }; // ✅
+
+//10.1
+function getFirstKeyword(book) {
+  const keyword = book.keywords?.[0] || `data not found`;
+} // ✅
+
 */

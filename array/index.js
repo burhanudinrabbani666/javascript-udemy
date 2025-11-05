@@ -48,7 +48,6 @@ const bettaShop = {
   },
 };
 
-console.log(bettaShop);
 /**ude
 //
 // destructuring object
@@ -272,3 +271,18 @@ console.log(...menu.entries());
 // index
 // for (const [i, el] of menu.entries()) console.log(`${i + 1}: ${el}`);
 */
+
+// old way
+if (bettaShop.openingHours && bettaShop.openingHours.mon)
+  console.log(bettaShop.openingHours.mon.open);
+
+// optional chain
+console.log(bettaShop.openingHours.mon?.open); //checking .mon, if mon exist log is open. if .mon not exist log undefined
+
+const days = [`mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`];
+
+for (const day of days) {
+  const open = bettaShop.openingHours[day]?.open ?? `closed`;
+
+  console.log(`On ${day} we open at ${open}`);
+}
