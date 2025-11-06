@@ -565,3 +565,49 @@ function logBookTheme(book) {
 
 logBookTheme(books[0]);
 */
+
+// 17.1
+function logBookCategories(values) {
+  const books = values.split(`;`);
+  for (const book of books) {
+    console.log(book);
+  }
+}
+
+const bookCategories =
+  'science;computing;computer science;algorithms;business;operating systems;networking;electronics';
+
+logBookCategories(bookCategories);
+
+// 17.2
+
+function getKeywordAsString(bookData) {
+  let keyword = [];
+  for (let index = 0; index < bookData.length; index++) {
+    const allKeyword = bookData[index].keywords;
+    keyword.push(...allKeyword);
+  }
+
+  const deleteDuplicate = [...new Set(keyword)];
+  console.log(deleteDuplicate.join(`;`));
+}
+
+getKeywordAsString(books);
+
+// 17.3
+const bookChapters = [
+  ['The Basics', 14],
+  ['Sorting', 254],
+  ['Searching', 372],
+  ['Graphs', 526],
+  ['Strings', 706],
+];
+
+function logBookChapters(bookChapters) {
+  for (const book of bookChapters) {
+    const [chapter, pages] = book;
+    console.log(`${chapter}`.padEnd(20, `_`), `${pages}`);
+  }
+}
+
+logBookChapters(bookChapters);

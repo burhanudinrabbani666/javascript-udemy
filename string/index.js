@@ -138,4 +138,29 @@ function capitalizeName(name) {
 capitalizeName(`burhanudin rabbani`);
 
 // padding
-const message = `go to gate 14`;
+const message = `Go to gate 14`;
+
+console.log(message.padStart(25, `+`).padEnd(35, `+`)); // ++++++++++++Go to gate 14++++++++++
+console.log(`bani`.padStart(25, `+`));
+
+//real case
+function maskCreditCard(number) {
+  const str = String(number);
+  const last = str.slice(-4);
+  return last.padStart(str.length, `*`);
+}
+
+console.log(maskCreditCard(1223343));
+
+//repeat
+
+const message2 = `bad wheater... all departues delayed...`;
+console.log(message2.repeat(5));
+
+function planesInLine(n) {
+  console.log(`there are ${n} planes in Line ${`🛩️`.repeat(n)}`);
+}
+
+planesInLine(5);
+planesInLine(2);
+planesInLine(13);
