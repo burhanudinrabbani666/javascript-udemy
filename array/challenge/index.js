@@ -111,10 +111,18 @@ const gameEvents = new Map([
 ]);
 
 const events = [...new Set(gameEvents.values())];
-console.log(events);
 
 gameEvents.delete(64);
 
-console.log(
-  `an Event happened, on avarage, every ${90 / gameEvents.size} minutes`
-);
+function inputText(userInput) {
+  const toLower = userInput.toLowerCase();
+  const trimText = toLower.trim();
+  const joinText = trimText.split(`_`);
+  const [firstText, LastText] = joinText;
+  const newLastText = LastText[0].toUpperCase() + LastText.slice(1);
+  const camelCase = firstText + newLastText;
+
+  console.log(`${camelCase.padEnd(20)}✅`);
+}
+
+inputText(`    calc_AGE`);
