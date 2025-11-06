@@ -75,3 +75,38 @@ function checkEmail(loginEmail) {
   const normalizedEmail = loginEmail.toLowerCase().trim();
   return email === normalizedEmail;
 }
+
+//replacing
+const priceGB = `288,977$`;
+const priceRp = priceGB.replace(`$`, `Rp`).replace(`,`, `.`);
+
+console.log(priceRp);
+
+// Replace All
+const announcement = `All Passengers come to bording door 23. bording door 23`;
+console.log(announcement.replaceAll(`door`, `gate`));
+
+//boolean
+const newPlane = `Airbus A320neo`;
+
+console.log(newPlane.includes(`A320`)); //true
+console.log(newPlane.includes(`boeing`)); //false
+console.log(newPlane.startsWith(`Air`)); //true
+
+if (newPlane.startsWith(`Airbus`) && newPlane.endsWith(`neo`)) {
+  console.log(`part of new Aribus Family `);
+}
+
+// Practice
+function checkbaggage(items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes(`knife`) || baggage.includes(`gun`)) {
+    console.log(`your NOT allowed to board`);
+  } else {
+    console.log(`Welcome to board`);
+  }
+}
+
+checkbaggage(` I have Laptop, some food and a pocket Knife`);
+checkbaggage(`sock and camera`);
+checkbaggage(`got some snacks and gun for protection`);
