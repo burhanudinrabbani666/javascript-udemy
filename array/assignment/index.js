@@ -506,7 +506,7 @@ const firstBookMap = new Map(Object.entries(books[0]));
 for (const [key, value] of firstBookMap) {
   if (typeof value === `number`) console.log(key);
 }
-*/
+
 
 // 15.1
 console.log(books[0].ISBN[6]);
@@ -530,3 +530,37 @@ function isContributor(author) {
 }
 
 console.log(isContributor(`Julie Sussman (Contributor)`));
+*/
+
+const author = `juLIE sussMan (Contributor)`;
+const deleteCont = author.toLowerCase().replaceAll(` (contributor)`, ``);
+
+//16.2
+const title = books[1].title;
+const newBookTittle = title.replace(`Programs`, `Software`);
+
+//16.3
+
+function logBookTheme(book) {
+  const bookName = book.title;
+  const bookNameToLower = bookName.toLowerCase();
+
+  if (bookNameToLower.includes(`computer`)) {
+    console.log(`This book is about computers`);
+  } else if (
+    bookNameToLower.includes(`algorithms`) ||
+    bookNameToLower.includes(`sturctures`)
+  ) {
+    console.log(`This book is about algorithms and data structures`);
+  } else if (
+    bookNameToLower.endWith(`system`) ||
+    (bookNameToLower.endWith(`systems`) &&
+      !bookNameToLower.includes(`operating`))
+  ) {
+    console.log(
+      `This book is about some systems, but definitely not about operating systems`
+    );
+  }
+}
+
+logBookTheme(books[0]);

@@ -40,7 +40,7 @@ function checkMidlleSeat(seat) {
 
 checkMidlleSeat(`11B`);
 checkMidlleSeat(`23C`);
-checkMidlleSeat(`3E`); */
+checkMidlleSeat(`3E`); 
 
 // basic string method 2
 
@@ -110,3 +110,4 @@ function checkbaggage(items) {
 checkbaggage(` I have Laptop, some food and a pocket Knife`);
 checkbaggage(`sock and camera`);
 checkbaggage(`got some snacks and gun for protection`);
+*/
