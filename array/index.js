@@ -364,7 +364,7 @@ rest.set(arr, `test`);
 console.log(rest);
 
 console.log(rest.get(arr));
-*/
+
 
 // maps itterarion
 const question = new Map([
@@ -397,6 +397,7 @@ for (const [key, value] of question) {
 
 //Convert Map to array
 console.log(...question);
+*/
 
 /*
 // Data needed for a later exercise

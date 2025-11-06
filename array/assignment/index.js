@@ -496,7 +496,7 @@ console.log(bookMap.size);
 bookMap.has(`author`)
   ? console.log(`The author of the book is known`)
   : `nothing`;
-*/
+
 
 // 14.1
 const firstBookMap = new Map(Object.entries(books[0]));
@@ -506,3 +506,27 @@ const firstBookMap = new Map(Object.entries(books[0]));
 for (const [key, value] of firstBookMap) {
   if (typeof value === `number`) console.log(key);
 }
+*/
+
+// 15.1
+console.log(books[0].ISBN[6]);
+console.log(books[0].ISBN[4]);
+console.log(books[0].ISBN[9]);
+console.log(books[0].ISBN[8]);
+
+// 15.2
+const quote =
+  'A computer once beat me at chess, but it was no match for me at kick boxing';
+console.log(quote.indexOf(`chess`));
+
+// 15.3
+console.log(quote.slice(-6));
+console.log(quote.slice(quote.lastIndexOf(` `) + 1));
+
+//15
+
+function isContributor(author) {
+  return author.lastIndexOf(`(Contributor)`) !== -1;
+}
+
+console.log(isContributor(`Julie Sussman (Contributor)`));
