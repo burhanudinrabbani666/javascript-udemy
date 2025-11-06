@@ -111,3 +111,31 @@ checkbaggage(` I have Laptop, some food and a pocket Knife`);
 checkbaggage(`sock and camera`);
 checkbaggage(`got some snacks and gun for protection`);
 */
+
+// String 3
+
+//split
+console.log(`a+very+easy+death`.split(`+`)); // [ "a", "very", "easy", "death" ]
+console.log(`burhanudin Rabbani`.split(` `));
+
+// join
+const [firstName, lastName] = `Burhanudin Rabbani`.split(` `);
+const newName = [`Mr.`, firstName, lastName.toUpperCase()].join(` `);
+
+console.log(newName); // Mr. Burhanudin RABBANI
+
+function capitalizeName(name) {
+  const names = name.split(` `);
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(` `));
+}
+
+capitalizeName(`burhanudin rabbani`);
+
+// padding
+const message = `go to gate 14`;

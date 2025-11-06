@@ -530,7 +530,7 @@ function isContributor(author) {
 }
 
 console.log(isContributor(`Julie Sussman (Contributor)`));
-*/
+
 
 const author = `juLIE sussMan (Contributor)`;
 const deleteCont = author.toLowerCase().replaceAll(` (contributor)`, ``);
@@ -564,3 +564,4 @@ function logBookTheme(book) {
 }
 
 logBookTheme(books[0]);
+*/
