@@ -3,6 +3,10 @@
 const airline = `TAP Air Garuda`;
 const plane = `A320`;
 
+/*
+
+//basic string method
+
 console.log(plane[0]); // A
 console.log(plane[1]); // `3`
 console.log(plane[2]); // `2`
@@ -36,4 +40,38 @@ function checkMidlleSeat(seat) {
 
 checkMidlleSeat(`11B`);
 checkMidlleSeat(`23C`);
-checkMidlleSeat(`3E`);
+checkMidlleSeat(`3E`); */
+
+// basic string method 2
+
+console.log(airline.toLowerCase()); // make all string to lower case
+console.log(airline.toUpperCase()); // make all string to upper case
+
+// Fix Name
+const passenger = `bAnI`; // Bani
+const passengerLower = passenger.toLowerCase();
+const correctPassengerName =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+
+console.log(correctPassengerName);
+
+function correctName(name) {
+  const nameLowerCase = name.toLowerCase();
+  return nameLowerCase[0].toUpperCase() + nameLowerCase.slice(1);
+}
+console.log(correctName(`aNaNG`));
+
+// Comparing Email
+
+const email = `hello@exm.io`;
+const loginEmail = `   Hello@exm.io \n`;
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+
+console.log(email === normalizedEmail);
+
+function checkEmail(loginEmail) {
+  const email = `bani@exm.io`;
+  const normalizedEmail = loginEmail.toLowerCase().trim();
+  return email === normalizedEmail;
+}
