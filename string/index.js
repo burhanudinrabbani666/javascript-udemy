@@ -110,7 +110,7 @@ function checkbaggage(items) {
 checkbaggage(` I have Laptop, some food and a pocket Knife`);
 checkbaggage(`sock and camera`);
 checkbaggage(`got some snacks and gun for protection`);
-*/
+
 
 // String 3
 
@@ -164,3 +164,4 @@ function planesInLine(n) {
 planesInLine(5);
 planesInLine(2);
 planesInLine(13);
+*/
