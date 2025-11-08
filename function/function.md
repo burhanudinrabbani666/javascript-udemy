@@ -215,3 +215,25 @@ document
 ```
 
 > need bind methods or this point to object who call ⬆️⬆️⬆️⬆️
+
+```js
+// Partial application
+
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.12); // preset rate tp 0.12
+
+console.log(addVAT(100));
+
+//challenge make with function retunr function way
+
+function addTaxRate(rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+}
+
+const addVAT2 = addTaxRate(0.14);
+console.log(addVAT2(200));
+```

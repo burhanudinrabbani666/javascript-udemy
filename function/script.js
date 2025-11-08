@@ -111,7 +111,6 @@ const x = (greeting) => (name) => console.log(`${greeting} ${name}`); // more sh
 
 x(`Hello MTFK`)(`jokowi`);
 
-*/
 
 // THE CALL AND APPLY METHODS
 
@@ -197,7 +196,7 @@ const addVAT = addTax.bind(null, 0.12); // preset rate tp 0.12
 
 console.log(addVAT(100));
 
-//challenge
+//challenge make with function retunr function way
 
 function addTaxRate(rate) {
   return function (value) {
@@ -207,3 +206,48 @@ function addTaxRate(rate) {
 
 const addVAT2 = addTaxRate(0.14);
 console.log(addVAT2(200));
+
+
+// CHALLENGE
+
+const poll = {
+  question: `what is your favorite progmraming language?`,
+  options: [`0: JavaScript`, `1: Python`, `2:Rust`, `3:C++`],
+  // this generates [0,0,0,0]. more in the next section
+  answer: new Array(4).fill(0),
+
+  registerNewAnswer: function () {
+    let answerInput = Number(
+      prompt(
+        ` ${this.question} \n ${this.options.join(
+          `\n`
+        )} (ite the option Number)`
+      )
+    );
+
+    typeof answerInput === `number` &&
+      answerInput < this.answer.length &&
+      this.answer[answerInput]++;
+
+    this.displayResult();
+    this.displayResult(`string`);
+  },
+
+  displayResult: function (type = 'array') {
+    if (type === `array`) {
+      console.log(`${this.answer}`);
+    } else if (type === `string`) {
+      console.log(`Pool result are ${this.answer.join(`, `)}`);
+    }
+  },
+};
+
+document
+  .querySelector('.poll')
+  .addEventListener(`click`, poll.registerNewAnswer.bind(poll));
+
+poll.displayResult.call({ answer: [5, 2, 3] }, `string`);
+
+// [5, 2, 3]
+// [1, 5, 3, 9, 6, 11]
+*/
