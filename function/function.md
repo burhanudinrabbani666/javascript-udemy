@@ -173,3 +173,45 @@ book.apply(batik, flightData); // not use anymore in modern JavaScript
 // more modern
 book.call(batik, ...flightData);
 ```
+
+- bind
+
+```js
+.bind()
+```
+
+bind not immediatly call the function. instead it returns an new function where this keyword is bound.
+
+```js
+// BIND METHODS
+
+const bookAG = book.bind(garuda);
+const bookAA = book.bind(airAsia);
+const bookBT = book.bind(batik);
+
+bookAA(696, `Ryan Hidayat`);
+console.log(airAsia);
+
+const bookAA77 = book.bind(airAsia, 99); // preset. only need name
+bookAA77(`Burhaudin Rabbani`);
+bookAA77(`Nuraisa`);
+```
+
+```js
+// With EventListeners
+
+garuda.planes = 300;
+garuda.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector('.buy')
+  .addEventListener(`click`, garuda.buyPlane.bind(garuda));
+// need bind methods or this point to .but not to garuda object
+```
+
+> need bind methods or this point to object who call ⬆️⬆️⬆️⬆️
