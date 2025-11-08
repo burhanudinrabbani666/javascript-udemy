@@ -62,3 +62,35 @@ const newPaspport = function (person) {
 newPaspport(bani); // bani.passport change in here
 checkin(flight, bani); // result is `wrong passport` here
 ```
+
+## High order Function
+
+```js
+// high order function
+const oneWord = function (str) {
+  return str.replace(/ /g, ``).toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...other] = str.split(` `);
+  return [first.toUpperCase(), ...other].join(` `);
+};
+
+// High Order function
+const trasformer = function (str, fn) {
+  console.log(`original string: ${str}`);
+  console.log(`Transformed String : ${fn(str)}`);
+  console.log(`Transformed by: ${fn.name}`);
+};
+
+trasformer(`Hello World! My name is Bani`, upperFirstWord);
+trasformer(`Hello World! My name is Bani`, oneWord);
+
+// callback all the time
+const high5 = function () {
+  console.log(`🖐️`);
+};
+
+document.body.addEventListener(`click`, high5); // callback
+[`bani`, `ryan`, `heri`].forEach(high5);
+```
