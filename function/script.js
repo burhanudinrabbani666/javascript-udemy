@@ -56,7 +56,6 @@ const newPaspport = function (person) {
 
 newPaspport(bani); // bani.passport change in here
 checkin(flight, bani); // result is `wrong passport` here
-*/
 
 // high order function
 const oneWord = function (str) {
@@ -85,3 +84,77 @@ const high5 = function () {
 
 document.body.addEventListener(`click`, high5);
 [`bani`, `ryan`, `heri`].forEach(high5);
+
+// FUNCTION RETURNING FUNCTION
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet(`Hey`);
+greeterHey(`Bani`); // Hey Bani
+greeterHey(`Aisa`); // Hey Aisa
+
+greet(`Hello`)(`Bani`); // Hello Bani
+
+//challenge
+
+// const x = (greeting) => {
+// return (name) => {
+// console.log(`${greeting} ${name}`);
+// };
+// };
+
+const x = (greeting) => (name) => console.log(`${greeting} ${name}`); // more shorter but more confusing
+
+x(`Hello MTFK`)(`jokowi`);
+*/
+
+// THE CALL AND APPLY METHODS
+
+const garuda = {
+  airline: `Garuda`,
+  iataCode: `GA`,
+  bookings: [],
+  book: function (flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+const airAsia = {
+  airline: `Air Asia`,
+  iataCode: `AA`,
+  bookings: [],
+};
+
+const batik = {
+  airline: `Batik Airline`,
+  iataCode: `BA`,
+  bookings: [],
+};
+const book = garuda.book;
+
+garuda.book(123, `burhanudin rabbani`); // burhanudin rabbani booked a seat on Garuda flight GA123
+garuda.book(456, `nuraisa`); // nuraisa booked a seat on Garuda flight GA456
+console.log(garuda);
+
+// call methods
+book.call(airAsia, 69, `jokowi`); // this keyword pointed to airAsia object
+book.call(garuda, 123, `irfan`); // tis keyword pointed to garuda object
+book.call(batik, 697, `Agus`); // tis keyword pointed to Batik object
+console.log(garuda);
+console.log(airAsia);
+console.log(batik);
+
+// APPLY METHODS
+
+const flightData = [583, `Pa ikin`];
+book.apply(batik, flightData); // not use anymore in modern JavaScript
+
+// more modern
+book.call(batik, ...flightData);
