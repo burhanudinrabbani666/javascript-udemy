@@ -10,6 +10,8 @@ const restaurant = {
   },
 };
 
+/*
+
 const arr = [1, 2, 3];
 
 // Old way
@@ -53,3 +55,4 @@ console.log(first, arrNested1, arrNested2); // 1 5 6 separateed varibale
 // set default values
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r); // 8, 9, 1  r still use default value
+*/
