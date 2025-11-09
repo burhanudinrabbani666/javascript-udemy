@@ -244,3 +244,40 @@ const [fiveStarRatings, oneStarRatings, threeStarRating = 0] = ratingStars;
 
 console.log(fiveStarRatings, oneStarRatings, threeStarRating);
 */
+
+// .2.1
+const { title, author, ISBN } = books[0];
+
+// 2.2
+const { keywords: tags } = books[0];
+
+// 2.3
+const { language = null, programmingLanguage = `unknown` } = books[6];
+
+// 2.4
+
+let bookTitle = `unknown`;
+let bookAuthor = `unknown`;
+({ title: bookTitle, author: bookAuthor } = books[0]);
+
+// 2.5
+
+const { rating: bookRating } = books[0].thirdParty.goodreads;
+
+// 2.6
+
+const printBookInfo = function ({ title, author, year = `unknown` }) {
+  console.log(`${title} by ${author}, in ${year}.`);
+};
+
+// test
+printBookInfo({
+  title: `${books[0].title}`,
+  author: `${books[0].author.join(` and `)}`,
+  year: `${books[0].publicationDate}`,
+});
+
+printBookInfo({
+  title: `${books[0].title}`,
+  author: `${books[0].author.join(` and `)}`,
+});
