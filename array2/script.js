@@ -4,9 +4,34 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Brushchetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risoto'],
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
 
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = `22.0`,
+    address,
+  }) {
+    console.log(
+      `Order received ${this.mainMenu[mainIndex]} and ${this.starterMenu[starterIndex]} wil be deliver to ${address} at ${time}`
+    );
   },
 };
 
@@ -55,4 +80,44 @@ console.log(first, arrNested1, arrNested2); // 1 5 6 separateed varibale
 // set default values
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r); // 8, 9, 1  r still use default value
+
+restaurant.orderDelivery({
+  time: `21:30`,
+  address: `Budur Kragnwangi 12`,
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({ address: `Budur Duku`, starterIndex: 2 });
+
+// Object destructuring
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+// make variable name different from properties name
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// Default Values
+const { menu = [], starterMenu: starter = [] } = restaurant;
+console.log(menu, starter); // menu is new properti because no properti in restaurant // starter meu change name and fill default array
+
+// mutate variable in object
+let a = 111;
+let b = 666;
+const obj = { a: 14, b: 10, c: 7 };
+({ a, b } = obj); // warp the object () to mutate the variable
+console.log(a, b);
+
+// nested object
+
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close); // 11,23
 */
