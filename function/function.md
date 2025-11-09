@@ -237,3 +237,16 @@ function addTaxRate(rate) {
 const addVAT2 = addTaxRate(0.14);
 console.log(addVAT2(200));
 ```
+
+## Immediately Invoked Function Expressions (IIFE)
+
+the function only using for one time.
+
+```js
+(function () {
+  console.log(`this never run again`);
+  const isPrivate = 23;
+})();
+
+(() => console.log(`this is ALSO never run again`))();
+```
